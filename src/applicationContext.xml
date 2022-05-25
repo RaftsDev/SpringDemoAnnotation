@@ -9,20 +9,6 @@
 
 	<!-- Define your beans here -->
 
-	<!-- Define the dependency -->
-
-	<bean id="myFortune"
-		class="com.raftsdev.springdemo.HappyFortuneService">
-	</bean>
-
-
-	<bean id="myCoach" class="com.raftsdev.springdemo.TrackCoach">
-		<!-- Setup constructor injection -->
-		<constructor-arg ref="myFortune" />
-	</bean>
-
-
-
 
 
 </beans>
