@@ -28,7 +28,7 @@ public class TennisCoach implements Coach {
 		fortuneService = theFortuneService;
 	} */
 	
-	// field injection
+	// any method injection
 	@Autowired
 	public void doSomeCrazyStuff(FortuneService theFortuneService) {
 		System.out.println(">> inside doSomeCrazyStuff method");
