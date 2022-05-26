@@ -21,12 +21,20 @@ public class TennisCoach implements Coach {
 	}
 */
 	
-	// setter injection
+	/* setter injection
 	@Autowired
 	public void setFortuneService(FortuneService theFortuneService) {
 		System.out.println(">> inside setter method");
 		fortuneService = theFortuneService;
-	}
+	} */
+	
+	// field injection
+	@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService) {
+		System.out.println(">> inside doSomeCrazyStuff method");
+		fortuneService = theFortuneService;
+	} 
+	
 	
 	@Override
 	public String getDailyWorkout() {
