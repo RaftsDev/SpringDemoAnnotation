@@ -1,12 +1,15 @@
 package com.raftsdev.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired // field injection
@@ -16,6 +19,16 @@ public class TennisCoach implements Coach {
 	
 	TennisCoach(){
 		System.out.println(">> inside default constructor");
+	}
+	
+	@PostConstruct
+	public void startStuff() {
+		System.out.println(">> Started bean...");
+	}
+	
+	@PreDestroy
+	public void cleanUpStuff() {
+		System.out.println(">> Cleaning before destroy a bean...");
 	}
 	
 	/* Previous constructor injection
